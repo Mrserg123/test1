@@ -15,7 +15,7 @@ const plugins = [
     favicon: "./public/favicon.ico",
     filename: "index.html",
     manifest: "./public/manifest.json",
-    inject: "body",
+    inject: true,
   }),
   new webpack.EnvironmentPlugin(["REACT_APP_WEATHER_API"]),
 ];
@@ -27,7 +27,6 @@ module.exports = {
   devtool: "source-map",
   output: {
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/",
     filename: "js/main.js",
     clean: true,
     assetModuleFilename: "img/[name][ext][query]",
@@ -36,7 +35,7 @@ module.exports = {
     extensions: [".js", ".ts", ".jsx", ".tsx", ".css"],
   },
   devServer: {
-    hot: true,
+    // hot: true,
     port: 8080,
     open: true,
     historyApiFallback: true,
